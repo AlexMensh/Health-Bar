@@ -1,32 +1,21 @@
+using System;
 using UnityEngine;
 
-[RequireComponent(typeof(UIDrawer))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private UIDrawer _uIDrawer;
     [SerializeField] private float _health;
     [SerializeField] private float _maxHealth;
-    [SerializeField] private float _minHealt;
+    [SerializeField] private float _minHealth;
     [SerializeField] private float _healAmount;
     [SerializeField] private float _damage;
 
-    void Start()
-    {
-        _uIDrawer = GetComponent<UIDrawer>();
-        _uIDrawer.DrawUI(_health, _maxHealth);
-    }
+    public Action<float, float> OnHealthChanged;
 
     public void RestoreHealth()
     {
-        if (_health < _maxHealth)
-        {
-            _health += _healAmount;
+        _health = Mathf.Clamp(_health + _healAmount, _minHealth, _maxHealth);
 
-            if (_health > _maxHealth)
-                _health = _maxHealth;
-        }
-
-        _uIDrawer.DrawUI(_health, _maxHealth);
+        OnHealthChanged?.Invoke(_health, _maxHealth);
     }
 
     public void TakeDamage()
@@ -34,8 +23,8 @@ public class Player : MonoBehaviour
         _health -= _damage;
 
         if (_health <= 0)
-            _health = _minHealt;
+            _health = _minHealth;
 
-        _uIDrawer.DrawUI(_health, _maxHealth);
+        OnHealthChanged?.Invoke(_health, _maxHealth);
     }
 }

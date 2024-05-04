@@ -1158,10 +1158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338721c64e4c64d4d9b182fe5fc33d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uIDrawer: {fileID: 0}
   _health: 100
   _maxHealth: 100
-  _minHealt: 0
+  _minHealth: 0
   _healAmount: 35
   _damage: 40
 --- !u!114 &1081037051
