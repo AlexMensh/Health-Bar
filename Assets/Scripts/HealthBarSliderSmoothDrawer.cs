@@ -1,38 +1,30 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Player))]
-public class UIDrawer : MonoBehaviour
+public class HealthBarSliderSmoothDrawer : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _healthBarText;
-    [SerializeField] private Slider _healthBarSlider;
     [SerializeField] private Slider _healthBarSliderSmooth;
     [SerializeField] private float _changingDelay;
-
     private Player _player;
 
     private void Awake()
     {
         _player = GetComponent<Player>();
     }
-
     private void OnEnable()
     {
-        _player.OnHealthChanged += DrawUI;
+        _player.HealthChanged += DrawUI;
     }
 
     private void OnDisable()
     {
-        _player.OnHealthChanged -= DrawUI;
+        _player.HealthChanged -= DrawUI;
     }
 
     public void DrawUI(float health, float maxHealth)
     {
-        _healthBarText.text = $"{health}/{maxHealth}";
-        _healthBarSlider.value = health / maxHealth;
-
         StartCoroutine(SmoothHealthBarDraw(health, maxHealth));
     }
 

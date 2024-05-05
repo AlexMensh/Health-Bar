@@ -932,7 +932,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1081037050}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: RestoreHealth
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1122,8 +1122,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1081037049}
-  - component: {fileID: 1081037051}
   - component: {fileID: 1081037050}
+  - component: {fileID: 1081037053}
+  - component: {fileID: 1081037052}
+  - component: {fileID: 1081037051}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1172,13 +1174,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1081037047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9e3403aed531e4590c1c0829113755, type: 3}
+  m_Script: {fileID: 11500000, guid: c90b23d77b81b8f42bd4647260854eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBarSliderSmooth: {fileID: 375719816}
+  _changingDelay: 0.5
+--- !u!114 &1081037052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081037047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895a362c18681e844804c31a8d28fad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBarSlider: {fileID: 1402396269}
+--- !u!114 &1081037053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081037047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b6a9b1a3dfda848917ac10fa851d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarText: {fileID: 290684385}
-  _healthBarSlider: {fileID: 1402396269}
-  _healthBarSliderSmooth: {fileID: 375719816}
-  _changingDelay: 0.5
 --- !u!1 &1102079721
 GameObject:
   m_ObjectHideFlags: 0

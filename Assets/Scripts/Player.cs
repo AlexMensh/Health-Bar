@@ -9,13 +9,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float _healAmount;
     [SerializeField] private float _damage;
 
-    public Action<float, float> OnHealthChanged;
+    public event Action<float, float> HealthChanged;
 
-    public void RestoreHealth()
+    public void Heal()
     {
         _health = Mathf.Clamp(_health + _healAmount, _minHealth, _maxHealth);
 
-        OnHealthChanged?.Invoke(_health, _maxHealth);
+        HealthChanged?.Invoke(_health, _maxHealth);
     }
 
     public void TakeDamage()
@@ -25,6 +25,6 @@ public class Player : MonoBehaviour
         if (_health <= 0)
             _health = _minHealth;
 
-        OnHealthChanged?.Invoke(_health, _maxHealth);
+        HealthChanged?.Invoke(_health, _maxHealth);
     }
 }
