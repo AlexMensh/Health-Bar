@@ -2,28 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Player))]
-public class HealthBarSliderSmoothDrawer : MonoBehaviour
+[RequireComponent(typeof(Health))]
+public class HealthBarSliderSmoothDrawer : HealthBar
 {
     [SerializeField] private Slider _healthBarSliderSmooth;
     [SerializeField] private float _changingDelay;
-    private Player _player;
 
-    private void Awake()
-    {
-        _player = GetComponent<Player>();
-    }
-    private void OnEnable()
-    {
-        _player.HealthChanged += DrawUI;
-    }
-
-    private void OnDisable()
-    {
-        _player.HealthChanged -= DrawUI;
-    }
-
-    public void DrawUI(float health, float maxHealth)
+    public override void DrawUI(float health, float maxHealth)
     {
         StartCoroutine(SmoothHealthBarDraw(health, maxHealth));
     }

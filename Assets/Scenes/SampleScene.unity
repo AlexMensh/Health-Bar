@@ -930,8 +930,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1081037050}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+      - m_Target: {fileID: 1081037054}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
         m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
@@ -1063,8 +1063,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1081037050}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+      - m_Target: {fileID: 1081037054}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 1
         m_Arguments:
@@ -1122,12 +1122,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1081037049}
-  - component: {fileID: 1081037050}
-  - component: {fileID: 1081037053}
-  - component: {fileID: 1081037052}
-  - component: {fileID: 1081037051}
+  - component: {fileID: 1081037054}
+  - component: {fileID: 1081037057}
+  - component: {fileID: 1081037056}
+  - component: {fileID: 1081037055}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1148,7 +1148,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1081037050
+--- !u!114 &1081037054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1157,29 +1157,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1081037047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 338721c64e4c64d4d9b182fe5fc33d9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5759f10b569253c4a9f9ac7dbf405e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
   _maxHealth: 100
   _minHealth: 0
   _healAmount: 35
-  _damage: 40
---- !u!114 &1081037051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081037047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90b23d77b81b8f42bd4647260854eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthBarSliderSmooth: {fileID: 375719816}
-  _changingDelay: 0.5
---- !u!114 &1081037052
+  _damage: 45
+--- !u!114 &1081037055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1192,7 +1178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarSlider: {fileID: 1402396269}
---- !u!114 &1081037053
+--- !u!114 &1081037056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1205,6 +1191,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarText: {fileID: 290684385}
+--- !u!114 &1081037057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081037047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90b23d77b81b8f42bd4647260854eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBarSliderSmooth: {fileID: 375719816}
+  _changingDelay: 1.5
 --- !u!1 &1102079721
 GameObject:
   m_ObjectHideFlags: 0
